@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <form action="" method="get">
+        <h1>Cálculo com as Operações Básicas</h1>
+        <input type="number" name="num1" id="n1">
+        <select name="operador" id="op">
+            <option value="soma">+</option>
+            <option value="sub">-</option>
+            <option value="mult">*</option>
+            <option value="div">/</option>
+        </select>
+        <input type="number" name="num2" id="n2">
+        <button onclick="calc()">Calcular</button>
+        <br>
+        <h2>Resultado: </h2>
+        <span></span>
+    </form>
     <script src="assets/script.js"></script>
 </body>
 </html>
