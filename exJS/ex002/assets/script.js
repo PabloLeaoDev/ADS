@@ -8,18 +8,28 @@ function calc() {
     let str2 = window.document.querySelector('#n2');
     let num2 = Number(str2.value);
     let opt = window.document.querySelector('#op').value;
+    let rtd = window.document.querySelector('#res');
     let op;
 
-    if (opt === '+') {
-        op = num1 + num2;
-    } else if (opt === '-') {
-        op = num1 - num2;
-    } else if (opt === '/') {
-        op = num1 * num2;
+    if (str1.value === '' || str2.value == '') {
+        rtd.classList.add('problema');
+        rtd.innerHTML = 'Um ou mais campos estão vazios';
+        setTimeout(() => {
+            rtd.classList.remove('problema');
+            rtd.innerHTML = '';
+        }, 3000)
+        return;
     } else {
-        op = num1 / num2;
+        if (opt === '+') {
+            op = num1 + num2;
+        } else if (opt === '-') {
+            op = num1 - num2;
+        } else if (opt === '/') {
+            op = num1 * num2;
+        } else {
+            op = num1 / num2;
+        }
     }
 
-    let rtd = window.document.querySelector('#res');
     rtd.innerHTML = op;
 }
