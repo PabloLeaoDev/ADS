@@ -14,20 +14,20 @@ if (type.upper() not in ['R', 'C', 'I']):
     # se o tipo de instalação não for R, C ou I
     print('Tipo de instalação inválido!')
 else:
-    valor = 0
+    value = 0
     if (type.upper() == 'R'):
         if (hwh <= 500):
-            valor = hwh * 0.40
+            value = hwh * 0.40
         else:
-            valor = hwh * 0.65
+            value = hwh * 0.65
     elif (type.upper() == 'C'):
         if (hwh <= 1000):
-            valor = hwh * 0.55
+            value = hwh * 0.55
         else:
-            valor = hwh * 0.60
+            value = hwh * 0.60
     elif (type.upper() == 'I'):
         if (hwh <= 5000):
-            valor = hwh * 0.55
+            value = hwh * 0.55
         else:
-            valor = hwh * 0.60
-    print(f'O valor a ser pago é de R${valor:.2f}')
+            value = hwh * 0.60
+    print(f'O valor a ser pago é de R${value:.2f}')
