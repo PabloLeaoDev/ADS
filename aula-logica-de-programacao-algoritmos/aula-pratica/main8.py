@@ -7,13 +7,13 @@ def somente_positivos(num):
     
     flag = True
     while flag:
-        if num > 0:
+        if num >= 0:
             fatorial(num)
             break
         else:
             while True:
                 num = int(input('\nDigite um valor positivo, por favor: '))
-                if num > 0:
+                if num >= 0:
                     flag = False
                     fatorial(num)
                     break
@@ -28,10 +28,13 @@ def fatorial(valor):
     """
     
     f = 1
-    for c in range(valor, 0, -1):
-        print(f'{c}! ', end='')
-        f *= c
-    print(f' = {f}')
+    if valor == 0:
+        print(f)
+    else:
+        for c in range(valor, 0, -1):
+            print(f'{c}! ', end='')
+            f *= c
+        print(f' = {f}')
 
-n = int(input('Digite um valor positivo: '))
+n = int(input('Digite um valor positivo pata calcular a fatorial: '))
 somente_positivos(n)
