@@ -50,8 +50,7 @@ print('-' * 15)
 sleep(1)
 
 machine = computer_choice()
-player = int(input('Digite um valor entre 1 e 3: '))
-player = valida_int(player)
+player = valida_int(int(input('Digite um valor entre 1 e 3: ')))
 
 # testes que comparam os valores de player e machine, tendo em vista a derrota do player
 test = (player == 1) and (machine == 2)
