@@ -12,16 +12,16 @@ strings = (
 )
 
 def encontrar_vogais(tupla):
-    vogais = 'aeiouAEIOU'
+    vogais = 'aeiou'
     vogais_ordem = []
     # percorre a tupla
-    for i in tupla:
+    for word in tupla:
         exibir = []
-        exibir.append(i)
+        exibir.append(word)
         # percorre as strings de cada tupla
-        for char in i:
+        for char in word:
             # averigua se na string tem uma vogal
-            if char in vogais:
+            if char.lower() in vogais:
                 exibir.append(char)
         vogais_ordem.append(exibir)
         # exibir.clear()
