@@ -32,6 +32,17 @@ def young_woman(dicio):
                 lower.append(value[0])
     return lower
 
+def above_men(dicio):
+    above = []
+    for value in dicio.values():
+        x = value[2]
+        if x.upper() == 'M':
+            y = value[1]
+            age = year - y
+            if age > average:
+                above.append(value[0])
+    return above
+
 while flag:
     user = []
     name = input('\nDigite seu nome: ')
@@ -53,9 +64,10 @@ while flag:
         else:
             print('\nDigite um valor válido!')
             again = input('Deseja cadastrar mais alguém? [S/N] ')
-print(dicio)
 print(f'\n\nO total de cadastros efetuados foi de {cont + 1}.')
 media = average_age(dicio)
 print(f'A média da idade dos cadastrados é de {media:.2f}.')
 women = young_woman(dicio)
 print(f'Lista de mulheres cadastradas com menos de 30 anos: {women}.')
+men = above_men(dicio)
+print(f'Lista de homens cadastrados com a idade acima da média obtida: {men}.')
