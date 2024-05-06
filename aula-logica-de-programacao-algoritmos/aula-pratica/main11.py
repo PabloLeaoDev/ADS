@@ -3,6 +3,9 @@ import datetime
 dicio = {}
 cont = 0
 flag = True
+# uma variável glogal que armazena o ano atual
+global year
+year = datetime.datetime.now().year
 
 def average_age(dicio):
     """This function calculate the average age of registered users, and return the value.
@@ -12,13 +15,22 @@ def average_age(dicio):
     """
     for value in dicio.values():
         x = value[1]
-        age = datetime.datetime.now().year - x
+        age = year - x
         age += age
     global average
     average = age / (cont + 1)
     return average
 
-
+def young_woman(dicio):
+    lower = []
+    for value in dicio.values():
+        x = value[2]
+        if x.upper() == 'F':
+            y = value[1]
+            age = year - y
+            if age < 30:
+                lower.append(value[0])
+    return lower
 
 while flag:
     user = []
@@ -42,6 +54,8 @@ while flag:
             print('\nDigite um valor válido!')
             again = input('Deseja cadastrar mais alguém? [S/N] ')
 print(dicio)
-print(f'O total de cadastros efetuados foi de {cont + 1}.')
+print(f'\n\nO total de cadastros efetuados foi de {cont + 1}.')
 media = average_age(dicio)
-print(media)
+print(f'A média da idade dos cadastrados é de {media:.2f}.')
+women = young_woman(dicio)
+print(f'Lista de mulheres cadastradas com menos de 30 anos: {women}.')
