@@ -11,7 +11,7 @@ def average_age(dicio):
     """This function calculate the average age of registered users, and return the value.
 
     Returns:
-        media: returns the average age of registered users.
+        float: returns the average age of registered users.
     """
     for value in dicio.values():
         x = value[1]
@@ -22,6 +22,14 @@ def average_age(dicio):
     return average
 
 def young_woman(dicio):
+    """This function calculate the age of women registered and return a list with the name of below thirty years old woman.
+
+    Args:
+        dicio (dict): A dictionary with the data of registered people.
+
+    Returns:
+        list: A list with the name of below thirty years old woman.
+    """
     lower = []
     for value in dicio.values():
         x = value[2]
@@ -33,6 +41,14 @@ def young_woman(dicio):
     return lower
 
 def above_men(dicio):
+    """This function calculate the age of registered man and return a list with the name of above average age registered people men.
+
+    Args:
+        dicio (dict): A dictionary with the data of registered people.
+
+    Returns:
+        list: A list with the name of above average age registered people men.
+    """
     above = []
     for value in dicio.values():
         x = value[2]
