@@ -1,9 +1,10 @@
 dicio = {}
 cont = 0
+flag = True
 
-while True:
+while flag:
     user = []
-    name = input('Digite seu nome: ')
+    name = input('\nDigite seu nome: ')
     birth = int(input('Digite o ano do seu nascimento: '))
     sex = input('Digite qual é o seu sexo: ')
     user.append(name)
@@ -11,6 +12,15 @@ while True:
     user.append(sex)
     dicio[f'user{cont}'] = user
     cont += 1
-    if not name or not birth or not sex:
-        break
+    again = input('\nDeseja cadastrar mais alguém? [S/N] ')
+    
+    while True:
+        if again.upper() == 'S':
+            break
+        elif again.upper() == 'N':
+            flag = False
+            break
+        else:
+            print('\nDigite um valor válido!')
+            again = input('Deseja cadastrar mais alguém? [S/N] ')
 print(dicio)
