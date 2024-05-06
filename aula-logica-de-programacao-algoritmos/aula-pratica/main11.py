@@ -18,7 +18,7 @@ def average_age(dicio):
         age = year - x
         age += age
     global average
-    average = age / (cont + 1)
+    average = age / (cont)
     return average
 
 def young_woman(dicio):
@@ -80,7 +80,7 @@ while flag:
         else:
             print('\nDigite um valor válido!')
             again = input('Deseja cadastrar mais alguém? [S/N] ')
-print(f'\n\nO total de cadastros efetuados foi de {cont + 1}.')
+print(f'\n\nO total de cadastros efetuados foi de {cont}.')
 media = average_age(dicio)
 print(f'A média da idade dos cadastrados é de {media:.2f}.')
 women = young_woman(dicio)
