@@ -25,9 +25,13 @@ def consultar_livro():
         print('4. Retornar ao menu')
         escolha = int(input('>>'))
         match(escolha):
-            # Exibe uma lista de todos os livros cadastrados
+            # Exibe uma lista de todos os livros cadastrados, com seus respectivos atributos
             case 1:
-                print(lista_livro)
+                for livros in lista_livro:
+                    print(f"\nID: {livros['ID']}")
+                    print(f"Nome: {livros['nome']}")
+                    print(f"Autor: {livros['autor']}")
+                    print(f"Editora: {livros['editora']}")
                 break
             # Exibe o livro cadastrado com base em seu ID
             case 2:
@@ -42,7 +46,10 @@ def consultar_livro():
                         ids_lista.append(value_id)
                         # Irá exibir na tela caso o ID naquele dicionário específico seja igual ao ID escolhido pelo usuário
                         if chaves == 'ID' and valores == id_escolhido:
-                            print(i)
+                            print(f"\nID: {i['ID']}")
+                            print(f"Nome: {i['nome']}")
+                            print(f"Autor: {i['autor']}")
+                            print(f"Editora: {i['editora']}")
                 # Se o ID escolhido pelo usuário não estiver cadastrado, ele exibe uma mensagem alertando isso e repete o loop
                 if id_escolhido not in ids_lista:
                     print('\nEsse ID não foi cadastrado. Realize o cadastro ou consulte outro ID!')
@@ -57,7 +64,10 @@ def consultar_livro():
                         value_autor = i['autor']
                         autor_lista.append(value_autor)
                         if chaves == 'autor' and valores == autor_escolhido:
-                            print(i)
+                            print(f"\nID: {i['ID']}")
+                            print(f"Nome: {i['nome']}")
+                            print(f"Autor: {i['autor']}")
+                            print(f"Editora: {i['editora']}")
                 if autor_escolhido not in autor_lista:
                     print('\nEsse autor não foi cadastrado. Realize o cadastro ou consulte outro autor!')
                     continue
