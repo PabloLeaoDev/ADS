@@ -16,7 +16,7 @@ def escolher():
         tipo = ('CP', 'AC')
         # Se "sabor" não estiver em "tipo"
         if sabor_escolhido not in tipo:
-            print('Sabor inválido. Tente novamente.')
+            print('Sabor inválido. Tente novamente.\n')
             continue
         while True:
             tamanho_escolhido = input('Entre com o tamanho desejado (P/M/G): ').upper()
@@ -24,9 +24,25 @@ def escolher():
             size = ('P', 'M', 'G')
             # Se "tamanho" não estiver em "size"
             if tamanho_escolhido not in size:
-                print('Tamanho inválido. Tente novamente.')
+                print('Tamanho inválido. Tente novamente.\n')
                 continue
             else:
+                op_cp = f'Você escolheu Cupuaçu de tamanho {tamanho_escolhido}: R$'
+                op_ac = f'Você escolheu Açaí de tamanho {tamanho_escolhido}: R$'
+                if sabor_escolhido == 'CP':
+                    if tamanho_escolhido == 'P':
+                        print(op_cp, '9.00')
+                    elif tamanho_escolhido == 'M':
+                        print(op_cp, '14.00')
+                    else:
+                        print(op_cp, '18.00')
+                else:
+                    if tamanho_escolhido == 'P':
+                        print(op_ac, '11.00')
+                    elif tamanho_escolhido == 'M':
+                        print(op_ac, '16.00')
+                    else:
+                        print(op_ac, '20.00')
                 pedidos.append((sabor_escolhido, tamanho_escolhido))
                 if input('\nDeseja mais alguma coisa (S/N)? ').upper() == 'S':
                     break
@@ -48,6 +64,6 @@ def calcular_valor(pedidos):
     return custo_total
 def main():
     pedidos = menu()
-    pagar = calcular_valor(pedidos)
+    pagar = (f'{calcular_valor(pedidos):.2f}')
     print(f'\nO valor total a ser pago é de R${pagar}')
 main()
