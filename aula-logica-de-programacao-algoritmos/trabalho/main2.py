@@ -41,7 +41,7 @@ def num_pagina():
         desconto = 0.20
     elif paginas >= 2000 and paginas < 20000:
         desconto = 0.25
-    # As condições abaixo atribuem o preço correto ao serviço escolhido, e calcula o valor que deve ser pago, com base no serviço e  no número de páginas, aplicando o desconto.
+    # As condições abaixo atribuem o preço correto ao serviço escolhido, e calculam o valor que deve ser pago, com base no serviço e  no número de páginas, aplicando o desconto.
     if servico == 'DIG':
         preco = 1.1
         pagar = paginas * preco
@@ -66,7 +66,7 @@ def servico_extra():
     print('2 - Encardenação Capa Dura - R$ 40.00')
     print('0 - Não desejo mais nada.')
     global adicional
-    # Um loop com a estrutura "match/case" que atribui um preço, ou não, dependendo da opção escolhida pelo usuário. Caso a opção escolhida pelo usuário não esteja o escopo adequado (0, 1 e 2), ele deverá escolher um valor válido para sair da repetição.
+    # Um loop com a estrutura "match/case" que atribui um preço, ou não, dependendo da opção escolhida pelo usuário. Caso a opção escolhida pelo usuário não esteja no escopo adequado (0, 1 e 2), ele deverá escolher um valor válido para sair da repetição.
     while True:
         extra = int(input('>>'))
         match (extra):
@@ -91,10 +91,10 @@ extra = servico_extra()
 total_pagar = descontado + extra
 # Se há desconto e adicional, execute o "print" mostrando o quanto foi descontado e o valor adicionado. Se não há, não mostre nenhum desconto ou adição no "print".
 if desconto and adicional:
-    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco} * páginas: {paginas} com {desconto}% de desconto + extra: R$ {adicional:.2f})')
+    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco:.2f} * páginas: {paginas} com {desconto}% de desconto + extra: R$ {adicional:.2f})')
 elif desconto: 
-    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco} * páginas: {paginas} com {desconto}% de desconto')
+    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco:.2f} * páginas: {paginas} com {desconto}% de desconto')
 elif adicional:
-    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco} * páginas: {paginas} + extra: R$ {adicional:.2f})')
+    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco:.2f} * páginas: {paginas} + extra: R$ {adicional:.2f})')
 else:
-    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco} * páginas: {paginas})')
+    print(f'Total: R$ {total_pagar:.2f} (serviço: {preco:.2f} * páginas: {paginas})')
