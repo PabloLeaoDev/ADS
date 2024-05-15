@@ -1,5 +1,5 @@
 def menu():
-    """Função que exibe o menu, recebe a entrada de dados (valor e quantidade dos produtos) e processa o valor final, através da multiplicação do preço do produto e da quantidade comprada.
+    """Função que exibe o menu, recebe os dados e os processa, através da multiplicação do preço do produto e da quantidade comprada.
     """
     
     print('Bem-vindo a Loja do Pablo Leão')
@@ -8,7 +8,6 @@ def menu():
     # variável que armazena o valor total da compra, tendo em vista o valor unitário do produto e a quantidade comprada do mesmo
     valorFinal = valor * qtd
     aplicarDesconto(valorFinal)
-
 def aplicarDesconto(valor):
     """Função que aplica uma porcentagem de desconto com base no valor final da compra.
 
@@ -31,7 +30,6 @@ def aplicarDesconto(valor):
     else:
         print('Houve um erro!')
     exibirValores(valor, valorDesconto)
-
 def exibirValores(valorInicial, valorFinal):
     """Função que exibe os valores sem desconto e com desconto, caso tenha, no terminal.
 
@@ -46,7 +44,6 @@ def exibirValores(valorInicial, valorFinal):
         print(f'Valor COM desconto: R${valorFinal:.2f}')
     else:
         print('Não há desconto para valores abaixo de R$2500!')
-        
 def main():
     """Função principal, responsável por chamar a função "menu()".
     """
