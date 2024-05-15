@@ -1,6 +1,6 @@
 print('\n\nBem-vindo a Livraria do Pablo Leão')
 def cadastrar_livro(id):
-    """Este precedimento coleta os dados de entrada dos usuários, e a partir deles cria um dicionário que é armazenado na lista "lista_livro", para posterior consulta.
+    """Este procedimento coleta os dados de entrada dos usuários, e a partir deles cria um dicionário que é armazenado na lista "lista_livro", para posterior consulta.
 
     Args:
         id (int): Esse parâmetro é referente ao ID do livro criado pelo usuário.
@@ -39,9 +39,9 @@ def consultar_livro():
                 ids_lista = []
                 # Percorre a "lista_livro", "i" = dicionários na lista
                 for i in lista_livro:
-                    # Percorre cada "i", coletando suas chaves e respactivos valores
+                    # Percorre cada "i", coletando suas chaves e respectivos valores
                     for chaves, valores in i.items():
-                        # "value_id" coleta o valor armazenadado especificamente na chave "ID" do dicionário, o qual, posteriormente, é armazenado na lista "ids_lista"
+                        # "value_id" coleta o valor armazenado especificamente na chave "ID" do dicionário, o qual, posteriormente, é armazenado na lista "ids_lista"
                         value_id = i['ID']
                         ids_lista.append(value_id)
                         # Irá exibir na tela caso o ID naquele dicionário específico seja igual ao ID escolhido pelo usuário
